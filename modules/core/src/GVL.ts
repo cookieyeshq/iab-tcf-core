@@ -3,6 +3,7 @@ import {GVLError} from './errors/index.js';
 import {Json} from './Json.js';
 import {ConsentLanguages, IntMap} from './model/index.js';
 import {ByPurposeVendorMap, Declarations, Feature, IDSetMap, Purpose, Stack, Vendor, VendorList} from './model/gvl/index.js';
+import {DataCategory} from './model/gvl/DataCategory.js';
 
 export type VersionOrVendorList = string | number | VendorList;
 type PurposeOrFeature = 'purpose' | 'feature';
@@ -163,6 +164,11 @@ export class GVL extends Cloneable<GVL> implements VendorList {
    * @param {IntMap<Purpose>} a collection of [[Purpose]]s
    */
   public purposes: IntMap<Purpose>;
+
+  /**
+   * @param {IntMap<DataCategory>} a collection of [[DataCategory]]s
+   */
+  public dataCategories: IntMap<DataCategory>;
 
   /**
    * @param {IntMap<Purpose>} a collection of [[Purpose]]s
@@ -365,6 +371,7 @@ export class GVL extends Cloneable<GVL> implements VendorList {
         features: this.features,
         specialFeatures: this.specialFeatures,
         stacks: this.stacks,
+        dataCategories: this.dataCategories,
       });
 
     }
@@ -405,6 +412,7 @@ export class GVL extends Cloneable<GVL> implements VendorList {
       specialFeatures: this.specialFeatures,
       stacks: this.stacks,
       vendors: this.fullVendorList,
+      dataCategories: this.dataCategories,
     }));
 
   }
@@ -493,6 +501,7 @@ export class GVL extends Cloneable<GVL> implements VendorList {
     this.features = gvlObject.features;
     this.specialFeatures = gvlObject.specialFeatures;
     this.stacks = gvlObject.stacks;
+    this.dataCategories = gvlObject.dataCategories;
 
     if (this.isVendorList(gvlObject)) {
 

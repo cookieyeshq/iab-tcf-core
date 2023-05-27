@@ -90,6 +90,5 @@
     "type": "git",
     "url": "https://github.com/InteractiveAdvertisingBureau/iabtcf-es.git",
     "directory": "modules/core"
-  },
-  "dependencies": {}
+  }
 }
