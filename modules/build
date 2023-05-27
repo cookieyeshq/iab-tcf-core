@@ -15,12 +15,14 @@ for FILE in $FILES; do
 
 done
 
+touch lib/cjs/package.json
 cat >lib/cjs/package.json <<!EOF
 {
     "type": "commonjs"
 }
 !EOF
 
+touch lib/mjs/package.json
 cat >lib/mjs/package.json <<!EOF
 {
     "type": "module"
