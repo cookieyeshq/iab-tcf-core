@@ -21,6 +21,7 @@
   "scripts": {
     "preversion": "echo 'woops I think you meant to go to the root' && exit 1",
     "build": "../build",
+    "prepare": "npm run build",
     "lint": "eslint `find test src -name '*.ts'`",
     "debug": "ndb mocha --no-timeouts",
     "serve:cov": "npx http-server ./coverage/",
